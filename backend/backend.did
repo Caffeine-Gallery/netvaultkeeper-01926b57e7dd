@@ -1,0 +1,32 @@
+type Time = int;
+type Result_2 = 
+ variant {
+   err: text;
+   ok;
+ };
+type Result_1 = 
+ variant {
+   err: text;
+   ok: Config;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok: text;
+ };
+type ConfigVersion = 
+ record {
+   content: text;
+   timestamp: Time;
+ };
+type Config = 
+ record {
+   name: text;
+   versions: vec ConfigVersion;
+ };
+service : {
+  addConfig: (text, text) -> (Result_2);
+  getAllConfigNames: () -> (vec text) query;
+  getConfig: (text) -> (Result_1) query;
+  getDiff: (text, nat, nat) -> (Result) query;
+}

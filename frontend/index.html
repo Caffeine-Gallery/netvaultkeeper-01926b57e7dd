@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Config Manager</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Network Config Manager</h1>
+        <div id="auth-section">
+            <input type="text" id="auth-token" placeholder="Enter API Token">
+            <button id="auth-button">Authenticate</button>
+        </div>
+        <div id="main-content" style="display: none;">
+            <h2>Configurations</h2>
+            <div id="config-list"></div>
+            <h2>Add/Update Configuration</h2>
+            <input type="text" id="config-name" placeholder="Configuration Name">
+            <textarea id="config-content" placeholder="Configuration Content"></textarea>
+            <button id="add-config-button">Add/Update Configuration</button>
+            <h2>Diff Configurations</h2>
+            <select id="diff-config-name"></select>
+            <input type="number" id="diff-version1" placeholder="Version 1">
+            <input type="number" id="diff-version2" placeholder="Version 2">
+            <button id="diff-button">Get Diff</button>
+            <div id="diff-result"></div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
